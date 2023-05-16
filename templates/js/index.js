@@ -5,7 +5,7 @@ const elementInView = (el, dividend = 1) => {
 
     return (
         elementTop <=
-        (window.innerHeight || document.documentElement.clientHeight) / dividend
+        (window.innerHeight * 0.95 || document.documentElement.clientHeight * 0.95) / dividend
     );
 };
 
@@ -13,7 +13,7 @@ const elementOutofView = (el) => {
     const elementTop = el.getBoundingClientRect().top;
 
     return (
-        elementTop > (window.innerHeight || document.documentElement.clientHeight)
+        elementTop > (window.innerHeight * 0.95 || document.documentElement.clientHeight * 0.95)
     );
 };
 
@@ -27,7 +27,7 @@ const hideScrollElement = (element) => {
 
 const handleScrollAnimation = () => {
     scrollElements.forEach((el) => {
-        if (elementInView(el, 1.25)) {
+        if (elementInView(el, 1.75)) {
             displayScrollElement(el);
         } else if (elementOutofView(el)) {
             hideScrollElement(el)
