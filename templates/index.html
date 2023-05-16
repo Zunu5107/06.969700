@@ -1,60 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<!-- normal setting -->
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Blueprint: Fixed Background Scrolling Layout</title>
-		<!-- meta set -->
-		<meta name="description" content="Blueprint: Fixed Background Scrolling Layout" />
-		<meta name="keywords" content="background scrolling, fixed background, background-attachment, jquery" />
-		<meta name="author" content="Codrops" />
 
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<header class="clearfix">
-				<span>Blueprint</span>
-				<h1>Fixed Background Scrolling Layout</h1>
-				<nav>
-					<a href="http://tympanus.net/Blueprints/BackgroundSlideshow/" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
-					<a href="http://tympanus.net/codrops/?p=14921" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
-				</nav>
-			</header>
-			<div id="cbp-fbscroller" class="cbp-fbscroller">
-				<nav>
-					<a href="#fbsection1" class="cbp-fbcurrent">Section 1</a>
-					<a href="#fbsection2">Section 2</a>
-					<a href="#fbsection3">Section 3</a>
-				</nav>
-				<!-- 1 page -->
-				<section id="fbsection1">
-				</section>
-				<!-- 2 page -->
-				<section id="fbsection2">
-				</section>
-				<!-- 3 page -->
-				<section id="fbsection3">
-				</section>
-			</div>
+<head>
+	<!-- normal setting -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Fixed Background Scrolling Layout</title>
+	<!-- meta set -->
+	<meta name="description" content="Blueprint: Fixed Background Scrolling Layout" />
+	<meta name="keywords" content="background scrolling, fixed background, background-attachment, jquery" />
+	<meta name="author" content="Codrops" />
+
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr.custom.js"></script>
+</head>
+<style>
+	.side-box2 {
+        overflow: scroll;
+        text-align: right;
+        padding: 50px 250px 0px 250px;
+        font-size: 450%;
+        
+    }
+
+</style>
+
+<body>
+	<div class="container">
+		<header class="clearfix">
+			<span>Blueprint</span>
+			<h1>Fixed Background Scrolling Layout</h1>
+			<nav>
+				<a href="http://tympanus.net/Blueprints/BackgroundSlideshow/" class="icon-arrow-left"
+					data-info="previous Blueprint">Previous Blueprint</a>
+				<a href="http://tympanus.net/codrops/?p=14921" class="icon-drop"
+					data-info="back to the Codrops article">back to the Codrops article</a>
+			</nav>
+		</header>
+		<div id="cbp-fbscroller" class="cbp-fbscroller">
+			<nav>
+				<a href="#fbsection1" class="cbp-fbcurrent">Section 1</a>
+				<a href="#fbsection2">Section 2</a>
+				<a href="#fbsection3">Section 3</a>
+			</nav>
+			<!-- 1 page -->
+			<section id="fbsection1">
+				<div class="side-box2">
+					<ol>
+						<h1>오꽤하조</h1>
+					</ol>
+				</div>
+				<div class="side-box js-scroll scrolled slide-left">
+					<div>
+						<h2></h2>
+						<p>
+							<li>자유로운 분위기에서 나오는 자유로운 의견을 제출합니다.</li>
+						</p>
+						<p>
+							<li>많은 대화로 원활한 합의점 창출합니다.</li>
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- 2 page -->
+			<section id="fbsection2">
+			</section>
+			<!-- 3 page -->
+			<section id="fbsection3">
+			</section>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
-		<script src="js/jquery.easing.min.js"></script>
-		<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
-		<script src="js/waypoints.min.js"></script>
-		<!-- jquery-smartresize by @louis_remi : https://github.com/louisremi/jquery-smartresize -->
-		<script src="js/jquery.debouncedresize.js"></script>
-		<script src="js/cbpFixedScrollLayout.min.js"></script>
-		<script>
-			$(function() {
-				cbpFixedScrollLayout.init();
-			});
-		</script>
-	</body>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- jquery.easing by http://gsgd.co.uk/ : http://gsgd.co.uk/sandbox/jquery/easing/ -->
+	<script src="js/jquery.easing.min.js"></script>
+	<!-- waypoints jQuery plugin by http://imakewebthings.com/ : http://imakewebthings.com/jquery-waypoints/ -->
+	<script src="js/waypoints.min.js"></script>
+	<!-- jquery-smartresize by @louis_remi : https://github.com/louisremi/jquery-smartresize -->
+	<script src="js/jquery.debouncedresize.js"></script>
+	<script src="js/cbpFixedScrollLayout.min.js"></script>
+	<script>
+		$(function () {
+			cbpFixedScrollLayout.init();
+		});
+	</script>
+</body>
+
 </html>
