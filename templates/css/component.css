@@ -57,8 +57,8 @@ body,
 .side-box {
 	width: 50%;
 	height: 50%;
-	background-color: white;
-	color: black;
+	background-color: #839BCC;
+	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
