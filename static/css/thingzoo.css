@@ -1,0 +1,24 @@
+.navbar {
+    opacity: .6;
+}
+
+.container {
+    padding: 8% 10% 8% 10%;
+}
+
+.carousel {
+    width: 30vw;
+    height: 70vh;
+}
+
+.profile-desc {
+    padding-top: 25%;
+}
+
+.profile-desc2 {
+    padding-top: 5%;
+}
+
+a {
+    text-decoration-line: none;
+}
