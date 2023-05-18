@@ -65,11 +65,11 @@ body,
 }
 
 .side-box2 {
-	overflow: scroll;
+	/*overflow: scroll;*/
 	text-align: right;
 	padding: 50px 250px 0px 250px;
 	font-size: 450%;
-
+	
 }
 
 /**Styling scrollable elements*/
