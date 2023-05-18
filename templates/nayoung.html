@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>NaYoung Page</title>
+    <style>
+        body {
+            background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px
+        }
+
+        #jb-container {
+            width: 940px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid #bcbcbc;
+        }
+
+        #jb-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #bcbcbc;
+            text-align: center;
+            font-size: 150%;
+            color: rgba(0, 102, 255, 0.786);
+        }
+
+        #jb-content {
+            width: 550px;
+            height: 350px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+            border: 1px solid #bcbcbc;
+            
+        }
+
+        #jb-sidebar {
+            width: 300px;
+            height: 350px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            border: 1px solid #bcbcbc;
+        }
+
+
+        #jb-footer {
+            clear: both;
+            padding: 20px;
+            border: 1px solid #bcbcbc;
+            font-size: 30px;
+            padding-bottom: 100px;
+        }
+
+        .mycomment {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mycomment>input {
+            width: 300%;
+            height: 50px;
+            font-size: 30px;
+        }
+
+        .mycomment>button {
+            margin-left: 10px;
+            text-align: center;
+            width: 50px;
+
+        }
+
+        .mybox>ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            min-height: 48px;
+
+        }
+
+        #jb-footer>h5 {
+            max-width: 75%;
+            font-size: 30px;
+            font-weight: 900;
+            color: rgba(0, 89, 255, 0.829);
+            font-family: "Times New Roman", Times, serif;
+            margin-top: 20px;
+        }
+
+        #jb-sidebar>h2 {
+            font-size: 30px;
+            font-weight: 900;
+            color: rgba(0, 89, 255, 0.829);
+            font-family: "Times New Roman", Times, serif;
+            margin-top: 20px;
+        }
+
+        #jb-content>h3 {
+            font-size: 30px;
+            font-weight: 900;
+            color: rgba(0, 89, 255, 0.829);
+            font-family: "Times New Roman", Times, serif;
+            margin: 10px 0px 0px 10px;
+
+        }
+
+        #jb-content>h4 {
+            font-size: 30px;
+            font-weight: 900;
+            color: rgba(0, 89, 255, 0.829);
+            font-family: "Times New Roman", Times, serif;
+            margin: 20px 0px 0px 10px;
+        }
+
+        .mybox>ul>h6 {
+            max-width: 75%;
+            font-size: 20px;
+            font-weight: 500;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-top: 0%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            show_comment();
+        });
+        function show_comment() {
+            fetch('/nayoung/guestbook').then(res => res.json()).then(data => {
+                let rows = data['result']
+                $('#comment-list').empty()
+                rows.forEach((a) => {
+                    let comment = a['comment']
+                    let temp_html = `<div class="mybox">
+                                            <ul>
+                                                <h6>✔️ ${comment}</h6>
+                                            </ul>
+                                        </div>`
+                    $('#comment-list').append(temp_html)
+                })
+            })
+        }
+
+        function save_comment() {
+            let comment = $('#comment').val()
+
+            let formData = new FormData();
+            formData.append("comment_give", comment);
+
+            fetch('/nayoung/guestbook', { method: "POST", body: formData, }).then((response) => response.json()).then((data) => {
+                alert(data["msg"]);
+                window.location.reload();
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="jb-container">
+        <div id="jb-header">
+            <h1>나를 소개합니다❤️</h1>
+        </div>
+        <div id="jb-sidebar">
+            <h2>👤 About</h2>
+            <p>🙇‍♀️ : 김나영</p>
+            <p>🎂 : 1997.07.30</p>
+            <p>📧 : kkd04250@naver.com</p>
+            <p>🏠 : 강원도 속초시 거주</p>
+            <p>👩‍⚖️ MBTI : ISFP</p>
+            <p>🔠 혈액형 : B형</p>
+        </div>
+        <div id="jb-content">
+            <h3>👍 Merit</h3>
+            <ul>
+                <li>열정이 넘친다.</li>
+                <br>
+                <li>끈기가 있어 시작하면 끝까지 해낸다.</li>
+                <br>
+                <li>약속 시간을 잘 지킨다.</li>
+            </ul>
+            <h4>📔 My Business Style</h4>
+            <ul>
+                <li>팀원의 말을 귀 기울여 듣는다.</li>
+                <br>
+                <li>다양한 의견을 제시한다.</li>
+                <br>
+                <li>해야 할 일을 미루지 않는다.</li>
+
+            </ul>
+        </div>
+        <div id="jb-footer">
+            <h5>📝 Visitors' Book</h5>
+            <div class="mybox">
+                <div class="mycomment">
+                    <input id="comment" class="form-control" type="text" placeholder="방명록을 남겨주세요" />
+                    <button onclick="save_comment()" type="button" class="btn btn-outline-primary">남기기</button>
+                </div>
+            </div>
+            <div class="mybox" id="comment-list">
+                <ul>
+                    <h6>✅ hello</h6>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

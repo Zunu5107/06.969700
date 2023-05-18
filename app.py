@@ -32,5 +32,28 @@ def thing_guestbook_get():
     comment_list = list(db.guestbook.thingzoo.find({}, {'_id': False}))
     return jsonify({'result': comment_list})
 
+@app.route('/nayoung')
+def nayoung():
+    return render_template('nayoung.html')
+
+@app.route('/nayoung/guestbook', methods=["POST"])
+def nayoung_guestbook_post():
+    
+    comment_receive = request.form['comment_give']
+
+    doc = {
+        
+        'comment': comment_receive
+    }
+
+    db.guestbook.nayoung.insert_one(doc)
+
+    return jsonify({'msg': '등록 완료!'})
+
+@app.route("/nayoung/guestbook", methods=["GET"])
+def nayoung_guestbook_get():
+    comment_list = list(db.guestbook.nayoung.find({}, {'_id': False}))
+    return jsonify({'result': comment_list})
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)
