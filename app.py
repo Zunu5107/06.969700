@@ -27,5 +27,10 @@ def thing_guestbook_post():
 
     return jsonify({'msg': '등록 완료!'})
 
+@app.route("/thingzoo/guestbook", methods=["GET"])
+def thing_guestbook_get():
+    comment_list = list(db.guestbook.thingzoo.find({}, {'_id': False}))
+    return jsonify({'result': comment_list})
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)
