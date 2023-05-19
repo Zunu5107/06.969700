@@ -1,0 +1,125 @@
+.t3px-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.side-box3px {
+	width: 80%;
+	height: 25%;
+	margin-left: 10%;
+	display: flex;
+    flex-direction: row;
+}
+
+/* 3page setting */
+
+.js-scroll3p {
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+.js-scroll3p.scrolled3p {
+	opacity: 1;
+}
+
+.scrolled3p > div.side-box3px.slide-left1p {
+	animation: slide-in-left1p 1s ease-in-out both;
+}
+
+.scrolled3p > div.side-box3px.slide-left2p {
+	animation: slide-in-left2p 1.5s ease-in-out both;
+}
+
+.scrolled3p > div.side-box3px.slide-left3p {
+	animation: slide-in-left3p 2s ease-in-out both;
+}
+
+
+
+@keyframes slide-in-left1p {
+	0% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes slide-in-left2p {
+	0% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+    20% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes slide-in-left3p {
+	0% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+    40% {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+#person1 {
+	background-image: url(/static/images/juns_character.jpg);
+}
+
+#person2 {
+	background-image: url(/static/images/thingzoo/1.jpg);
+}
+
+#person3 {
+	background-image: url(/static/images/common.jpeg);
+}
+
+.person {
+    max-width: 30%;
+    max-height: 100%;
+    width: 250px;
+    height: 300px;
+    background-image: url(/static/images/original.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 40px;
+    margin-right: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.pr-intro{
+    width: 100%;
+    padding-left: 2%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
