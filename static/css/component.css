@@ -21,7 +21,7 @@ body,
 	transform: translateY(-50%);
 }
 
-.cbp-fbscroller>nav a {
+.cbp-fbscroller>nav .cbp-fb {
 	display: block;
 	position: relative;
 	z-index: 9999;
@@ -54,9 +54,9 @@ body,
 	background-attachment: fixed;
 }
 
-.side-box2 {
+.page1-title {
 	text-align: right;
-	padding: 5% 15% 0% 0%;
+	padding: 10% 15% 0% 0%;
 	font-size: 6em;
 }
 
