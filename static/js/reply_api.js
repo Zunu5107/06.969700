@@ -6,14 +6,10 @@ function getcomments() {
         datas.forEach(c => {
             let temp_html =
                 `
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>${c["comment"]}</p>
-                        <footer class="blockquote-footer">${c["name"]}</footer>
-                    </blockquote>
-                </div>
-            </div>
+            <div class="cmt">
+						<p class="commnets">${c["comment"]}</p>
+						<p class="nickname"> - ${c["name"]} - </p>
+					</div>
             `;
 
             $("#comment_line").append(temp_html);

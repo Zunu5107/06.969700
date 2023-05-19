@@ -9,6 +9,8 @@ $( document ).ready(function() {
   var loadedit = document.querySelector("div.loadedit");
   loadedit.style.display = "block";
   main_page.style.display = "none";
+  slideIndex = 1;
+  getcomments();
 });
 
 el.addEventListener("animationend", () => {
@@ -18,6 +20,7 @@ el.addEventListener("animationend", () => {
   loadedit.style.display = "none";
   main_page.style.display = "block";
   //$("body").css('backgroundColor', '#ffffff');
+  slideIndex = 1;
   showSlides(slideIndex);
 })
 
