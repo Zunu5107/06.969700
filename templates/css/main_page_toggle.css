@@ -1,0 +1,287 @@
+.main_page {
+    /*display:none;*/
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.loadedit {
+    display: none;
+    /*display: block;*/
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #79E0EE;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    /*max-width: 1000px;*/
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+.navigater_dot {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* 1page set */
+.mySlides.ch01>.main_img {
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    width: 400px;
+    display: inline-block;
+}
+
+.mySlides.ch01>.main_img>img {
+    size: contain;
+    border-radius: 50%;
+}
+.mySlides.ch01>.main_img_back{
+    position: absolute;
+    top : 0;
+    left: 0;
+    background-color: slategray;
+    width: 550px;
+    height: 100%;
+}
+
+.mySlides.ch01>.my_introduce {
+    position: absolute;
+    top: 100px;
+    left: 580px;
+}
+
+.mySlides.ch01>.my_introduce>.name_txt {
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+}
+
+.mySlides.ch01>.my_introduce>.information{
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides.ch01>.my_introduce>.information>.contacts{
+    font-size: 30px;
+    opacity: 0.8;
+    font-family: 'Teko', monospace;
+}
+
+.mySlides.ch01>.my_introduce>.information>.blogs{
+    width: 100%;
+    vertical-align: bottom;
+    text-align: left;
+    display: flex;
+    flex-direction: row;;
+}
+.mySlides.ch01>.my_introduce>.information>.blogs p{
+    font-size: 30px;
+    font-family: 'Teko', monospace;
+}
+.mySlides.ch01>.my_introduce>.information>.blogs>.marks>.github_mark{
+    width: 100px;
+    display: inline-block;
+    margin-left: 100px;
+}
+.mySlides.ch01>.my_introduce>.information>.blogs>.marks img {
+    size: contain;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* 2 page setting */
+.mySlides.ch02> .Jun_Advantages{
+    position: relative;
+    left: 70px;
+    top: 100px;
+}
+.mySlides.ch02> .Jun_Advantages > h1{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 48px;
+}
+.mySlides.ch02> .Jun_Advantages > ul{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 30px;
+}
+
+.mySlides.ch02> .Jun_My_style{
+    position: relative;
+    left: 200px;
+    top: 200px;
+}
+.mySlides.ch02> .Jun_My_style > h1{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 48px;
+}
+.mySlides.ch02> .Jun_My_style > ul{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 30px;
+}
+
+/* 3page */
+.reply_card{
+    margin-left: 5vw;
+    width : 70vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.reply_card>.card_header{
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+    border-radius: 7px 7px 0px 0px;
+    border : 1px solid;
+    border-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.reply_card>.card_header>img{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 20px;
+    height: 20px;
+}
+.reply_card>.card_body{
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    border-radius: 0px 0px 7px 7px;
+    border : 1px solid;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.reply_card>.card_body>.card_ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reply_card>.card_body>.card_ul>.li_ip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.reply_card>.card_body>.card_ul>.li_ip > img{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 25px;
+    height: 25px;
+}
+.reply_card>.card_body>.card_ul>.li_ip > .form-control{
+    width: 300px;
+    height: 25px;
+}
+.reply_card>.card_body>.card_ul>.textreply{
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 60px;
+}
+
+
