@@ -31,15 +31,15 @@ body,
 	outline: none;
 	margin: 25px 0;
 	border-radius: 50%;
-	border: 4px solid #fff;
+	border: 4px solid black;
 }
 
 .no-touch .cbp-fbscroller>nav a:hover {
-	background: rgba(255, 255, 255, 0.6);
+	background: rgba(0, 0, 0, 0.6);
 }
 
 .cbp-fbscroller>nav a.cbp-fbcurrent {
-	background: #fff;
+	background: black;
 }
 
 /* background-attachment does the trick */
@@ -54,23 +54,34 @@ body,
 	background-attachment: fixed;
 }
 
-.side-box {
-	width: 50%;
-	height: 50%;
-	background-color: #839BCC;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.side-box2 {
+	text-align: right;
+	padding: 5% 15% 0% 0%;
+	font-size: 6em;
 }
 
-.side-box2 {
-	/*overflow: scroll;*/
-	text-align: right;
-	padding: 50px 250px 0px 250px;
-	font-size: 450%;
-	
+.page1-content {
+	font-size: 200%;
+	margin-left: 8%;
 }
+
+.page2-content {
+	font-size: 20px;
+	padding: 8% 0% 0% 10%;
+}
+
+.underline {
+	line-height: 1.2;
+	font-size: 2em;
+	font-weight: 700;
+	background-image: linear-gradient(transparent calc(100% - 3px), #000 3px);
+	background-repeat: no-repeat;
+}
+
+.underline.yellow {
+	background-image: linear-gradient(transparent 60%, #F8CD07 40%);
+}
+
 
 /**Styling scrollable elements*/
 
@@ -90,6 +101,14 @@ body,
 .scrolled.slide-right {
 	float: right;
 	animation: slide-in-right 1s ease-in-out both;
+}
+
+.scrolled.fade-in-top {
+	animation: fade-in-top 1s ease-in-out both;
+}
+
+.scrolled.underline {
+	animation: underline 1s ease-in-out both;
 }
 
 /* ----------------------------------------------
@@ -127,25 +146,28 @@ body,
 	}
 }
 
-#fbsection1 {
-	/* background-image: url(../images/1.jpg); */
-	background-color: #C0AFDE;
+@keyframes fade-in-top {
+	0% {
+		-webkit-transform: translateY(-50px);
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
-#fbsection2 {
-	/* background-image: url(../images/2.jpg); */
-	background-color: #9BB8F2;
-}
+@keyframes underline {
+	0% {
+		background-size: 0%;
+		opacity: 0;
+	}
 
-#fbsection3 {
-	/* background-image: url(../images/3.jpg); */
-	background-color: #C0AFDE;
-}
-
-#fbsection4 {
-	background-image: url(../images/4.jpg);
-}
-
-#fbsection5 {
-	background-image: url(../images/5.jpg);
+	100% {
+		background-size: 100%;
+		opacity: 1;
+	}
 }
